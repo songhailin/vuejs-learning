@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="vue.js"></script>
+<style>
+    h4 {
+        color: red;
+    }
+</style>
+</head>
+<body>
+<!-- start -->
+<h4>自定义组件模板, Vue.component:</h4>
+<!-- code 展示 -->
+<textarea disabled="true" cols="80" rows="28">
+<div id="app-9">
+    <ol>
+      <todo-item 
+      v-for="item in groceryList"
+      v-bind:todo="item"
+      v-bind:key="item.id">
+      </todo-item>
+    </ol>
+</div>
+<script>
+    Vue.component('todo-item', {
+      props: ['todo'],
+      template: '<li>{{todo.text}}</li>'
+    });
+
+    var app9 = new Vue({
+        el: "#app-9",
+        data: {
+            groceryList: [
+                { id: 0, text: 'Vegetables' },
+                { id: 1, text: 'Cheese' },
+                { id: 2, text: 'Whatever else humans are supposed to eat' }
+            ]
+        }
+    });
+</script>
+</textarea>
+<div id="app-9">
+    <ol>
+      <todo-item 
+      v-for="item in groceryList"
+      v-bind:todo="item"
+      v-bind:key="item.id">
+      </todo-item>
+    </ol>
+</div>
+<script>
+    Vue.component('todo-item', {
+      props: ['todo'],
+      template: '<li>{{todo.text}}</li>'
+    });
+
+    var app9 = new Vue({
+        el: "#app-9",
+        data: {
+            groceryList: [
+                { id: 0, text: 'Vegetables' },
+                { id: 1, text: 'Cheese' },
+                { id: 2, text: 'Whatever else humans are supposed to eat' }
+            ]
+        }
+    });
+</script>
+<!-- end -->
+</body>
+</html>

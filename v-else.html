@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="vue.js"></script>
+<style>
+    h4 {
+        color: red;
+    }
+</style>
+</head>
+<body>
+<!-- start -->
+<h4>If else条件, v-else:</h4>
+<!-- code 展示 -->
+<textarea disabled="true" cols="80" rows="13">
+<div id="app-5">
+  <p v-if="seen">Now you see me.</p>
+  <p v-else>Now you can't see me.</p>
+</div>
+<script>
+    var app5 = new Vue({
+      el: '#app-5',
+      data: {
+        seen: true
+      }
+    });
+</script>
+</textarea>
+<div id="app-5">
+  <p v-if="seen">Now you see me.</p>
+  <p v-else>Now you can't see me.</p>
+</div>
+<script>
+    var app5 = new Vue({
+      el: '#app-5',
+      data: {
+        seen: true
+      }
+    });
+</script>
+<!-- end -->
+</html>

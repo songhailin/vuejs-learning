@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="vue.js"></script>
+<style>
+    h4 {
+        color: red;
+    }
+</style>
+</head>
+<body>
+<!-- start -->
+<h4>Show条件, v-show="expression":</h4>
+<!-- code 展示 -->
+<textarea disabled="true" cols="80" rows="15">
+<div id="app-4">
+  <p v-show="seen">Now you see me.</p>
+  <p v-show="unseen">Now you can't see me.</p>
+</div>
+<script>
+    var app4 = new Vue({
+      el: '#app-4',
+      data: {
+        seen: true,
+        unseen: false
+      }
+    });
+</script>
+</textarea>
+<div id="app-4">
+  <p>和v-if指令不同的是，使用v-show指令的元素始终会被渲染到HTML，它只是简单地为元素设置CSS的style属性.</p>
+  <p v-show="seen">Now you see me.</p>
+  <p v-show="unseen">Now you can't see me.</p>
+</div>
+<script>
+    var app4 = new Vue({
+      el: '#app-4',
+      data: {
+        seen: true,
+        unseen: false
+      }
+    });
+</script>
+<!-- end -->
+</body>
+</html>

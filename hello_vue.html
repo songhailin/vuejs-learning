@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="vue.js"></script>
+<style>
+    h4 {
+        color: red;
+    }
+</style>
+</head>
+<body>
+<!-- start -->
+<h4>数据展示:</h4>
+<!-- code 展示 -->
+<textarea disabled="true" cols="80" rows="15">
+<div id="app">
+  {{ message }}
+</div>
+
+<script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!'
+      }
+    });
+</script>
+</textarea>
+<div id="app">
+  {{ message }}
+</div>
+<script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!'
+      }
+    });
+</script>
+<!-- end -->
+</body>
+</html>

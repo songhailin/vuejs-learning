@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="vue.js"></script>
+<style>
+    h4 {
+        color: red;
+    }
+    h4:not(:first-child) {
+        border-top: 1px dashed gray;
+        padding-top: 20px;
+    }
+</style>
+</head>
+<body>
+<!-- start -->
+<h4>数据展示:</h4>
+<!-- code 展示 -->
+<textarea disabled="true" cols="80" rows="15">
+<div id="app">
+  {{ message }}
+</div>
+
+<script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!'
+      }
+    });
+</script>
+</textarea>
+<div id="app">
+  {{ message }}
+</div>
+<script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!'
+      }
+    });
+</script>
+<!-- end -->
+
+<!-- start -->
+<h4>数据绑定, v-bind:</h4>
+<!-- code 展示 -->
+<textarea disabled="true" cols="80" rows="18">
+<div id="app-2">
+  <span v-bind:title="message">
+    Hover your mouse over me for a few seconds
+    to see my dynamically bound title!
+  </span>
+</div>
+
+<script>
+    var app2 = new Vue({
+      el: '#app-2',
+      data: {
+        message: 'You loaded this page on ' + new Date().toLocaleString()
+      }
+    });
+</script>
+</textarea>
+<div id="app-2">
+  <span v-bind:title="message">
+    Hover your mouse over me for a few seconds
+    to see my dynamically bound title!
+  </span>
+</div>
+<script>
+    var app2 = new Vue({
+      el: '#app-2',
+      data: {
+        message: 'You loaded this page on ' + new Date().toLocaleString()
+      }
+    });
+</script>
+<!-- end -->
+
+<!-- start -->
+<h4>If条件, v-if="expression":</h4>
+<!-- code 展示 -->
+<textarea disabled="true" cols="80" rows="20">
+<div id="app-3">
+  <p v-if="seen">Now you see me.</p>
+  <p v-if="unseen">Now you can't see me.</p>
+  <p v-if="age > 18">My age is {{age}}.</p>
+  <p v-if="name.indexOf('Lily') >= 0">My name is {{name}}.</p>
+</div>
+
+<script>
+    var app3 = new Vue({
+      el: '#app-3',
+      data: {
+        seen: true,
+        unseen: false,
+        age: 19,
+        name: 'LilyWang'
+      }
+    });
+</script>
+</textarea>
+<div id="app-3">
+  <p v-if="seen">Now you see me.</p>
+  <p v-if="unseen">Now you can't see me.</p>
+  <p v-if="age > 18">My age is {{age}}.</p>
+  <p v-if="name.indexOf('Lily') >= 0">My name is {{name}}.</p>
+</div>
+<script>
+    var app3 = new Vue({
+      el: '#app-3',
+      data: {
+        seen: true,
+        unseen: false,
+        age: 19,
+        name: 'LilyWang'
+      }
+    });
+</script>
+<!-- end -->
+
+<!-- start -->
+<h4>Show条件, v-show="expression":</h4>
+<!-- code 展示 -->
+<textarea disabled="true" cols="80" rows="15">
+<div id="app-4">
+  <p v-show="seen">Now you see me.</p>
+  <p v-show="unseen">Now you can't see me.</p>
+</div>
+<script>
+    var app4 = new Vue({
+      el: '#app-4',
+      data: {
+        seen: true,
+        unseen: false
+      }
+    });
+</script>
+</textarea>
+<div id="app-4">
+  <p>和v-if指令不同的是，使用v-show指令的元素始终会被渲染到HTML，它只是简单地为元素设置CSS的style属性.</p>
+  <p v-show="seen">Now you see me.</p>
+  <p v-show="unseen">Now you can't see me.</p>
+</div>
+<script>
+    var app4 = new Vue({
+      el: '#app-4',
+      data: {
+        seen: true,
+        unseen: false
+      }
+    });
+</script>
+<!-- end -->
+
+<!-- start -->
+<h4>If else条件, v-else:</h4>
+<!-- code 展示 -->
+<textarea disabled="true" cols="80" rows="13">
+<div id="app-5">
+  <p v-if="seen">Now you see me.</p>
+  <p v-else>Now you can't see me.</p>
+</div>
+<script>
+    var app5 = new Vue({
+      el: '#app-5',
+      data: {
+        seen: true
+      }
+    });
+</script>
+</textarea>
+<div id="app-5">
+  <p v-if="seen">Now you see me.</p>
+  <p v-else>Now you can't see me.</p>
+</div>
+<script>
+    var app5 = new Vue({
+      el: '#app-5',
+      data: {
+        seen: true
+      }
+    });
+</script>
+<!-- end -->
+
+<!-- start -->
+<h4>For循环, v-for:</h4>
+<!-- code 展示 -->
+<textarea disabled="true" cols="80" rows="20">
+<div id="app-6">
+  <ol>
+    <li v-for="todo in todos">
+      {{ todo.text }}
+    </li>
+  </ol>
+</div>
+<script>
+    var app6 = new Vue({
+      el: '#app-6',
+      data: {
+        todos: [
+          { text: 'Learn JavaScript' },
+          { text: 'Learn Vue' },
+          { text: 'Build something awesome' }
+        ]
+      }
+    });
+</script>
+</textarea>
+<div id="app-6">
+  <ol>
+    <li v-for="todo in todos">
+      {{ todo.text }}
+    </li>
+  </ol>
+</div>
+<script>
+    var app6 = new Vue({
+      el: '#app-6',
+      data: {
+        todos: [
+          { text: 'Learn JavaScript' },
+          { text: 'Learn Vue' },
+          { text: 'Build something awesome' }
+        ]
+      }
+    });
+</script>
+<!-- end -->
+
+<!-- start -->
+<h4>绑定事件, v-on:</h4>
+<!-- code 展示 -->
+<textarea disabled="true" cols="80" rows="20">
+<div id="app-7">
+  <p>{{ message }}</p>
+  <button v-on:click="reverseMessage">Reverse Message</button>
+</div>
+<script>
+    var app7 = new Vue({
+      el: '#app-7',
+      data: {
+        message: 'Hello Vue.js!'
+      },
+      methods: {
+        reverseMessage: function () {
+          this.message = this.message.split('').reverse().join('')
+        }
+      }
+    });
+</script>
+</textarea>
+<div id="app-7">
+  <p>{{ message }}</p>
+  <button v-on:click="reverseMessage">Reverse Message</button>
+</div>
+<script>
+    var app7 = new Vue({
+      el: '#app-7',
+      data: {
+        message: 'Hello Vue.js!'
+      },
+      methods: {
+        reverseMessage: function () {
+          this.message = this.message.split('').reverse().join('')
+        }
+      }
+    });
+</script>
+<!-- end -->
+
+<!-- start -->
+<h4>双向绑定数据, v-model:</h4>
+<!-- code 展示 -->
+<textarea disabled="true" cols="80" rows="20">
+<div id="app-8">
+  <p>{{ message }}</p>
+  <input v-model="message">
+</div>
+<script>
+    var app8 = new Vue({
+      el: '#app-8',
+      data: {
+        message: 'Hello Vue!'
+      }
+    });
+</script>
+</textarea>
+<div id="app-8">
+  <p>将message绑定到文本框，当更改文本框的值时，p标签的message内容也会被更新。</p>
+  <p>{{ message }}</p>
+  <input v-model="message">
+</div>
+<script>
+    var app8 = new Vue({
+      el: '#app-8',
+      data: {
+        message: 'Hello Vue!'
+      }
+    });
+</script>
+<!-- end -->
+
+<!-- start -->
+<h4>自定义组件模板, Vue.component:</h4>
+<!-- code 展示 -->
+<textarea disabled="true" cols="80" rows="28">
+<div id="app-9">
+    <ol>
+      <todo-item 
+      v-for="item in groceryList"
+      v-bind:todo="item"
+      v-bind:key="item.id">
+      </todo-item>
+    </ol>
+</div>
+<script>
+    Vue.component('todo-item', {
+      props: ['todo'],
+      template: '<li>{{todo.text}}</li>'
+    });
+
+    var app9 = new Vue({
+        el: "#app-9",
+        data: {
+            groceryList: [
+                { id: 0, text: 'Vegetables' },
+                { id: 1, text: 'Cheese' },
+                { id: 2, text: 'Whatever else humans are supposed to eat' }
+            ]
+        }
+    });
+</script>
+</textarea>
+<div id="app-9">
+    <ol>
+      <todo-item 
+      v-for="item in groceryList"
+      v-bind:todo="item"
+      v-bind:key="item.id">
+      </todo-item>
+    </ol>
+</div>
+<script>
+    Vue.component('todo-item', {
+      props: ['todo'],
+      template: '<li>{{todo.text}}</li>'
+    });
+
+    var app9 = new Vue({
+        el: "#app-9",
+        data: {
+            groceryList: [
+                { id: 0, text: 'Vegetables' },
+                { id: 1, text: 'Cheese' },
+                { id: 2, text: 'Whatever else humans are supposed to eat' }
+            ]
+        }
+    });
+</script>
+
+<h4>参考：</h4>
+<p><a href="https://vuejs.org/v2/guide/" target="_blank">https://vuejs.org/v2/guide/</a></p>
+<p><a href="http://www.cnblogs.com/keepfool/p/5619070.html" target="_blank">http://www.cnblogs.com/keepfool/p/5619070.html</a></p>
+</body>
+</html>

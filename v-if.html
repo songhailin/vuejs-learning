@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="vue.js"></script>
+<style>
+    h4 {
+        color: red;
+    }
+</style>
+</head>
+<body>
+<!-- start -->
+<h4>If条件, v-if="expression":</h4>
+<!-- code 展示 -->
+<textarea disabled="true" cols="80" rows="20">
+<div id="app-3">
+  <p v-if="seen">Now you see me.</p>
+  <p v-if="unseen">Now you can't see me.</p>
+  <p v-if="age > 18">My age is {{age}}.</p>
+  <p v-if="name.indexOf('Lily') >= 0">My name is {{name}}.</p>
+</div>
+
+<script>
+    var app3 = new Vue({
+      el: '#app-3',
+      data: {
+        seen: true,
+        unseen: false,
+        age: 19,
+        name: 'LilyWang'
+      }
+    });
+</script>
+</textarea>
+<div id="app-3">
+  <p v-if="seen">Now you see me.</p>
+  <p v-if="unseen">Now you can't see me.</p>
+  <p v-if="age > 18">My age is {{age}}.</p>
+  <p v-if="name.indexOf('Lily') >= 0">My name is {{name}}.</p>
+</div>
+<script>
+    var app3 = new Vue({
+      el: '#app-3',
+      data: {
+        seen: true,
+        unseen: false,
+        age: 19,
+        name: 'LilyWang'
+      }
+    });
+</script>
+<!-- end -->
+</body>
+</html>

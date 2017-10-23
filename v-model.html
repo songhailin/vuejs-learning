@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="vue.js"></script>
+<style>
+    h4 {
+        color: red;
+    }
+</style>
+</head>
+<body>
+<!-- start -->
+<h4>双向绑定数据, v-model:</h4>
+<!-- code 展示 -->
+<textarea disabled="true" cols="80" rows="20">
+<div id="app-8">
+  <p>{{ message }}</p>
+  <input v-model="message">
+</div>
+<script>
+    var app8 = new Vue({
+      el: '#app-8',
+      data: {
+        message: 'Hello Vue!'
+      }
+    });
+</script>
+</textarea>
+<div id="app-8">
+  <p>将message绑定到文本框，当更改文本框的值时，p标签的message内容也会被更新。</p>
+  <p>{{ message }}</p>
+  <input v-model="message">
+</div>
+<script>
+    var app8 = new Vue({
+      el: '#app-8',
+      data: {
+        message: 'Hello Vue!'
+      }
+    });
+</script>
+<!-- end -->
+</body>
+</html>
